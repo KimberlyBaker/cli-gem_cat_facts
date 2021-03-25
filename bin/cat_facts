@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/cat_facts'
+
+CatFacts::CLI.new.call
