@@ -6,7 +6,8 @@ class CatFacts::CLI
         puts "Cat Facts"
         puts "\n"
         ask_quest
-        list_fact
+        user_input
+        #list_fact
         #done
     end
 
@@ -17,7 +18,7 @@ class CatFacts::CLI
         DOC
     end
 
-    def list_fact
+    def user_input
         input = nil
         while input != "e"
             input = gets.strip.downcase
@@ -25,7 +26,7 @@ class CatFacts::CLI
             when "y"
                 puts "\n"
                 puts "-------------------------------------"
-                puts "CAT FACT: HERE"
+                puts "CAT FACT:"
                 puts "-------------------------------------"
                 puts "\n"
                 puts <<-DOC.gsub /^\s*/, ''
@@ -38,12 +39,13 @@ class CatFacts::CLI
             when "e"
                 puts "\n"
                 puts "See you next time for more floofy facts! :)"
+                puts "\n"
             else
                 puts "\n"
                 puts "Oops! Try again. Type y (Yes), n (No), or e (Exit) please."
             end
         end
-        @catfacts = CatFacts::Facts.all
+        #@catfacts = CatFacts::Facts.all
     end
 
     #def done
